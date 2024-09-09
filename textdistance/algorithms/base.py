@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 # built-in
 from collections import Counter
 from contextlib import suppress
@@ -155,7 +156,7 @@ class Base:
             result += s
         return result
 
-    def _count_counters(self, counter: Counter) -> float:
+    def _count_counters(self, counter: Counter) -> int:
         """Return all elements count from Counter
         """
         if getattr(self, 'as_set', False):

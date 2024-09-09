@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 # built-in
 from collections import defaultdict
 from itertools import zip_longest
@@ -6,10 +7,11 @@ from typing import Any, Sequence, TypeVar
 
 # app
 from .base import Base as _Base, BaseSimilarity as _BaseSimilarity
-from .types import TestFunc, SimFunc
+from .types import SimFunc, TestFunc
 
 
 try:
+    # external
     import numpy
 except ImportError:
     numpy = None  # type: ignore[assignment]
@@ -124,7 +126,7 @@ class Levenshtein(_Base):
                 dist = self.test_func(s1[r - 1], s2[c - 1])
                 edit = prev[c - 1] + (not dist)
                 cur[c] = min(edit, deletion, insertion)
-        return cur[-1]
+        return int(cur[-1])
 
     def __call__(self, s1: Sequence[T], s2: Sequence[T]) -> int:
         s1, s2 = self._get_sequences(s1, s2)

@@ -15,10 +15,6 @@
     [
       "pyxdameraulevenshtein",
       "damerau_levenshtein_distance"
-    ],
-    [
-      "abydos.distance",
-      "DamerauLevenshtein"
     ]
   ],
   "Hamming": [
@@ -33,14 +29,6 @@
     [
       "jellyfish",
       "hamming_distance"
-    ],
-    [
-      "distance",
-      "hamming"
-    ],
-    [
-      "abydos.distance",
-      "Hamming"
     ]
   ],
   "Jaro": [
@@ -78,10 +66,6 @@
     ],
     [
       "pylev",
-      "levenshtein"
-    ],
-    [
-      "distance",
       "levenshtein"
     ]
   ]
